@@ -1,42 +1,32 @@
-#include "lists.h"
-#include <string.>
 #include <stdio.h>
 #include <stdlib.h>
-
+#include "lists.h"
 /**
- * is_palindrome - A function that checks if a list is a palindrome.
- * @head: The pointer to the head of the list.
- * Return: 0 if list not a palindrome, 1 if it is.
+ * is_palindrome - function to call check_pal to see if list is palindrome
+   @head: ptr to the beginning of the list
+ * Return: 0 if not palindrome else 1
  */
-
 int is_palindrome(listint_t **head)
 {
-	listint_t *tmp = *head;
-	int nodes = 0, i = 0, *array = NULL;
-
-	if (*head == NULL || head == NULL || (*head)->next == NULL)
+	if (head == NULL || *head == NULL)
 		return (1);
-	while (tmp)
-	{
-		nodes++;
-		tmp = tmp->next;
-	}
-	array = malloc(sizeof(int) * nodes);
-	tmp = *head;
-	while (tmp)
-	{
-		array[i++] = tmp->n;
-		tmp = tmp->next;
-	}
-	for (i = 0; i < nodes / 2; i++)
-	{
-		if (array[i] != array[nodes - 1 - i])
-		{
-			free(array);
-			return (0);
-		}
-	}
-	free(array);
-	return (1);
+	return (check_pal(head, *head));
 }
 
+/**
+ * check_pal - function to check if the list is palindrome
+ * @head: ptr to the beginning of the list
+ * @last: ptr to the end of the list
+ * Return: 0 if not palindrom else 1
+ */
+int check_pal(listint_t **head, listint_t *last)
+{
+	if (last == NULL)
+		return (1);
+	if (check_pal(head, last->next) && (*head)->n == last->n)
+	{
+		*head = (*head)->next;
+		return (1);
+	}
+	return (0);
+}

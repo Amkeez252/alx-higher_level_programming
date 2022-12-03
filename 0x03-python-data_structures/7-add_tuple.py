@@ -1,27 +1,6 @@
 #!/usr/bin/python3
-
-
-
 def add_tuple(tuple_a=(), tuple_b=()):
-    """
-    adds the first two elements of two tuples together
-    and returns the result
-    """
-    len_a = len(tuple_a)
-    len_b = len(tuple_b)
-    new_tup = ()
-    for i in range(2):
-        if i >= len_a:
-            a = 0
-        else:
-            a = tuple_a[i]
-        if i >= len_b:
-            b = 0
-        else:
-            b = tuple_b[i]
-
-        if (i == 0):
-            new_tup = (a + b)
-        else:
-            new_tup = (new_tup, a + b)
-    return (new_tup)
+    a, b = len(tuple_a), len(tuple_b)
+    new_tuple = ((tuple_a[0] if a >= 1 else 0) + (tuple_b[0] if b >= 1 else 0),
+            (tuple_a[1] if a >= 2 else 0) + (tuple_b[1] if b >= 2 else 0))
+    return (new_tuple)
