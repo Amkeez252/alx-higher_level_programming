@@ -8,7 +8,8 @@ lib.print_python_bytes.argtypes = [ctypes.py_object]
 lib.print_python_float.argtypes = [ctypes.py_object]
 s = b"Hello"
 lib.print_python_bytes(s);
-b = b'\xff\xf8\x00\x00\x00\x00\x00\x00';
+b = b'\xff\xf8\x00\x00\x0\x00\x00\x00';
+
 lib.print_python_bytes(b);
 b = b'What does the \'b\' character do in front of a string literal?';
 lib.print_python_bytes(b);
@@ -46,8 +47,8 @@ julien@ubuntu:~/CPython$ ./103-tests.py
   first 6 bytes: 48 65 6c 6c 6f 00
 [.] bytes object info
   size: 8
-  trying string: ??
-  first 9 bytes: ff f8 00 00 00 00 00 00 00
+  trying string: ?
+  first 9 bytes: ff f8 00 00 00 00 00 00 0
 [.] bytes object info
   size: 60
   trying string: What does the 'b' character do in front of a string literal?
