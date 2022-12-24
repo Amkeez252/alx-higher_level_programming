@@ -1,6 +1,11 @@
 #!/usr/bin/python3
 def add_tuple(tuple_a=(), tuple_b=()):
-    a, b = len(tuple_a), len(tuple_b)
-    new_tuple = ((tuple_a[0] if a >= 1 else 0) + (tuple_b[0] if b >= 1 else 0),
-            (tuple_a[1] if a >= 2 else 0) + (tuple_b[1] if b >= 2 else 0))
-    return (new_tuple)
+    sum1 = 0
+    sum2 = 0
+    t1 = tuple_a + (0, 0)
+    t2 = tuple_b + (0, 0)
+
+    sum1 += t1[0] + t2[0]
+    sum2 += t1[1] + t2[1]
+
+    return (sum1, sum2)
