@@ -1,20 +1,15 @@
-#!/usr/bin/pytho3
-# -*- coding: utf-8 -*-
+#!/usr/bin/python3
 """
-Created on tuesday, 10 Jan 12:30 2023
-@author: Auwal Abdulmalik
+Defines "Rectangle" class subclass of "Basegeometry"
 """
-
-
 BaseGeometry = __import__('7-base_geometry').BaseGeometry
 
 
 class Rectangle(BaseGeometry):
-    """
-    A Rectangle class shape, inheirts from BaseGeometry
-    """
+    """class Rectangle"""
     def __init__(self, width, height):
+        """Initializes a Rectangle"""
         self.integer_validator("width", width)
-        self.integer_validator("height", height)
         self.__width = width
+        self.integer_validator("height", height)
         self.__height = height

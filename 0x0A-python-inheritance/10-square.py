@@ -1,25 +1,18 @@
 #!/usr/bin/python3
-# -*- coding: utf-8 -*-
 """
-Created on tuesday, 10 Jan 12:30 2023
-@author: Auwal Abdulmalik
+Defines Square class sublass of "Rectangle" subclass of "Basegeometry"
 """
-
-
 Rectangle = __import__('9-rectangle').Rectangle
 
 
 class Square(Rectangle):
-    """
-    A Square class shape, inheirts from Rectangle and BaseGeometry
-    """
-    def __it__(self, size):
-
-        """"
-        Init function for Square
-        Attributes:
-            size (int): The size of the square
-        """
-        super().__init__(size, size)
+    """class Square"""
+    def __init__(self, size):
+        """Initializes Square's side size"""
         self.integer_validator("size", size)
         self.__size = size
+        super().__init__(size, size)
+
+    def area(self):
+        """returns the area of the square"""
+        return self.__size ** 2
