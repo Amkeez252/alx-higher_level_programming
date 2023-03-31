@@ -2,7 +2,7 @@
 # -*- coding: utf-8 -*-
 """
 Created on fryday 31 mar 11:50 2023
-@author: Auwal Abdulmalik
+by  Auwal Abdulmalik
 """
 from urllib.request import urlopen
 

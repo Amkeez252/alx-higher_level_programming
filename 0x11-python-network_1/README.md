@@ -1,6 +1,6 @@
 # 0x11. Python - Network #1
 
-## Resources
+## Resources:books:
 ### Read or watch:
 
 [HOWTO Fetch Internet Resources Using urllib Package](https://docs.python.org/3/howto/urllib2.html)
